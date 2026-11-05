@@ -6,7 +6,7 @@ The WX+EV homepage: a static site for GitHub Pages, with no build step. Copy eve
 | file | what it is |
 |---|---|
 | `index.html` | the page: live sky, what this is, how it works, the record, about the uploader |
-| `privacy.html` | the uploader's privacy policy (same text as before, restyled). Its contact line is still `CONTACT_PLACEHOLDER` |
+| `privacy.html` | the uploader's privacy policy (same text as before, restyled). Its contact line points to the YouTube channel |
 | `socials.html` | every account, from `data/socials.json` |
 | `404.html` | "Lost in the fog" |
 | `style.css` | every style, including the privacy and 404 pages |
