@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#06110e">
+<title>Lost in the fog · WX+EV</title>
+<link rel="icon" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="/style.css">
+<style>
+  .fog404 { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+  .fog404 i { position: absolute; left: -40%; width: 120%; height: 34vh; border-radius: 50%; background: radial-gradient(closest-side, rgba(240, 238, 232, 0.16), rgba(240, 238, 232, 0)); animation: drift 38s linear infinite; }
+  .fog404 i:nth-child(1) { top: 52vh; }
+  .fog404 i:nth-child(2) { top: 62vh; animation-duration: 52s; animation-delay: -20s; }
+  .fog404 i:nth-child(3) { top: 44vh; animation-duration: 64s; animation-delay: -40s; opacity: .7; }
+  @keyframes drift { from { transform: translateX(-20%); } to { transform: translateX(60%); } }
+  body.plain main { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+  .code { font: 500 14px var(--mono); color: var(--red-hi); letter-spacing: .2em; }
+</style>
+</head>
+<body class="plain">
+<div class="fog404" aria-hidden="true"><i></i><i></i><i></i></div>
+<main>
+  <p class="code">404</p>
+  <h1>Lost in the fog</h1>
+  <p>Karl rolled in and this page went with him. The sky's still there, though.</p>
+  <p><a class="btn btn-red" href="/">Back to WX+EV</a></p>
+</main>
+</body>
+</html>

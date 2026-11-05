@@ -1,0 +1,49 @@
+{
+ "_note": "Edit this file to add or change accounts. A group with no accounts is not shown. platform is a key in js/icons.js: youtube, tiktok, instagram, facebook, x, threads, spotify, soundcloud, applemusic, bandcamp. Facebook: add {\"platform\": \"facebook\", \"name\": \"Facebook\", \"handle\": \"WXplusEV\", \"url\": \"https://www.facebook.com/<page>\"} to WX+EV once the page exists (same handle as Instagram).",
+ "groups": [
+  {
+   "id": "wxplusev",
+   "title": "WX+EV",
+   "blurb": "Daily weather prediction market picks over the San Francisco time lapse.",
+   "footer": true,
+   "accounts": [
+    {
+     "platform": "youtube",
+     "name": "YouTube",
+     "handle": "@WXplusEV",
+     "url": "https://www.youtube.com/@WXplusEV"
+    },
+    {
+     "platform": "tiktok",
+     "name": "TikTok",
+     "handle": "@WXplusEV",
+     "url": "https://www.tiktok.com/@wxplusev"
+    },
+    {
+     "platform": "instagram",
+     "name": "Instagram",
+     "handle": "@WXplusEV",
+     "url": "https://www.instagram.com/wxplusev/"
+    },
+    {
+     "platform": "x",
+     "name": "X",
+     "handle": "@WXplusEV",
+     "url": "https://x.com/WXplusEV"
+    }
+   ]
+  },
+  {
+   "id": "passages",
+   "title": "Passages",
+   "blurb": "Read-aloud passages over the time lapses.",
+   "accounts": []
+  },
+  {
+   "id": "music",
+   "title": "Music",
+   "blurb": "The instrumentals.",
+   "accounts": []
+  }
+ ]
+}

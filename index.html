@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>WX+EV</title>
+<meta name="description" content="WX+EV: daily picks for weather prediction markets from a proprietary model blend, shared over time lapses of the San Francisco sky.">
+<meta name="theme-color" content="#06110e">
+<meta property="og:type" content="website">
+<meta property="og:title" content="WX+EV">
+<meta property="og:description" content="Daily picks for weather prediction markets, shared over time lapses of the San Francisco sky.">
+<meta property="og:image" content="https://hbb4.github.io/img/og.png">
+<meta property="og:url" content="https://hbb4.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+<script defer src="js/astro.js"></script>
+<script defer src="js/weather.js"></script>
+<script defer src="js/sky.js"></script>
+<script defer src="js/record.js"></script>
+<script defer src="js/icons.js"></script>
+<script defer src="js/socials.js"></script>
+</head>
+<body class="home">
+<canvas id="sky" aria-hidden="true"></canvas>
+<div class="veil" aria-hidden="true"></div>
+
+<nav class="topbar">
+  <a class="brand" href="#top"><img src="favicon.png" alt="" width="28" height="28"><span>WX+EV</span></a>
+  <div class="links">
+    <a href="#how">How it works</a>
+    <a href="#record">Record</a>
+    <a href="#uploader">Uploader</a>
+    <a class="yt" href="https://www.youtube.com/@WXplusEV" rel="noopener">YouTube</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <img class="logo" src="img/logo.svg" alt="WX+EV logo" width="240" height="240">
+    <h1 class="sr-only">WX+EV</h1>
+    <p class="eyebrow">Profitable Weather Prediction Market Tips</p>
+    <p class="lede">Daily picks for weather prediction markets, from a proprietary model blend developed by a trained meteorologist. Shared in a multimedia format combining striking time lapse visuals looking southwest over San Francisco from Nob&nbsp;Hill with dynamic instrumentals.</p>
+    <div class="cta">
+      <a class="btn btn-red" href="https://www.youtube.com/@WXplusEV" rel="noopener">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13l11-6.5z"/></svg>
+        Watch @WXplusEV
+      </a>
+      <a class="btn btn-ghost" href="#record">See the record</a>
+    </div>
+  </div>
+
+  <div class="skybar" role="group" aria-label="Sky over San Francisco">
+    <div class="readout">
+      <span class="dot" id="sky-live-dot"></span>
+      <span id="sky-time">San Francisco</span>
+      <span class="sep">·</span>
+      <span id="sky-phase">—</span>
+      <span class="sep hide-sm">·</span>
+      <span id="sky-sun" class="hide-sm">—</span>
+    </div>
+    <div class="wxline" id="sky-wx" aria-live="off"></div>
+    <div class="scrub">
+      <button type="button" id="sky-play" class="chip" aria-pressed="false" title="Time-lapse the day">
+        <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path id="sky-play-icon" fill="currentColor" d="M8 5.5v13l11-6.5z"/></svg>
+        <span>Time-lapse</span>
+      </button>
+      <input type="range" id="sky-range" min="0" max="1439" step="1" value="720" aria-label="Time of day in San Francisco">
+      <button type="button" id="sky-guide" class="chip icon" aria-pressed="true" title="Constellations" aria-label="Show constellations">
+        <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M4 17l5-6 5 3 6-8"/><circle cx="4" cy="17" r="1.8" fill="currentColor"/><circle cx="9" cy="11" r="1.8" fill="currentColor"/><circle cx="14" cy="14" r="1.8" fill="currentColor"/><circle cx="20" cy="6" r="1.8" fill="currentColor"/></svg>
+      </button>
+      <button type="button" id="sky-live" class="chip" aria-pressed="true">Live</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="band" id="what">
+  <div class="wrap">
+    <p class="kicker">What this is</p>
+    <h2>The sky is the backdrop. <span class="accent">The pick is the point.</span></h2>
+    <div class="duo">
+      <article class="panel">
+        <div class="panel-icon sky-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><circle cx="34" cy="16" r="7"/><path d="M4 38c6-6 10-9 15-9s7 3 11 3 7-4 14-4v12H4z"/><path d="M22 38V18m-3 20 3-14 3 14m-6-12h6" class="tw"/></svg>
+        </div>
+        <h3>The sky</h3>
+        <p>A camera in a window over San Francisco shoots the sky around the clock, for days at a time. Every frame is measured, every day is scored, and the best stretches (fog rolling over the ridge, golden hour, storms, the city at night) become short vertical clips.</p>
+        <dl class="mini">
+          <div><dt>Stills</dt><dd class="ph">X.X M</dd></div>
+          <div><dt>Days filmed</dt><dd class="ph">XXX</dd></div>
+          <div><dt>Archive</dt><dd class="ph">XX TB</dd></div>
+        </dl>
+      </article>
+      <article class="panel">
+        <div class="panel-icon pick-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><path d="M6 40V28h6v12zm10 0V20h6v20zm10 0V12h6v28zm10 0V24h6v16z"/><path d="M4 10l12 6 10-8 18 6" class="ln"/></svg>
+        </div>
+        <h3>The pick</h3>
+        <p>Every day, a blend of weather models prices the next day's high or low temperature in a few US cities. Where the model and the market disagree enough, after fees, that disagreement becomes the pick of the day, posted before the market settles and tracked to the end.</p>
+        <dl class="mini">
+          <div><dt>Cities</dt><dd class="ph">XX</dd></div>
+          <div><dt>Exchanges</dt><dd>Kalshi · Polymarket</dd></div>
+          <div><dt>Markets</dt><dd>Daily high &amp; low</dd></div>
+        </dl>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="how">
+  <div class="wrap">
+    <p class="kicker">How it works</p>
+    <h2>Two pipelines, one frame</h2>
+    <p class="sub">The time lapse and the pick are made separately, then meet in a 30-second vertical video. Here's the very short version.</p>
+
+    <div class="flow">
+      <div class="lanes">
+        <div class="lane" data-lane="sky">
+          <span class="lane-label">The sky</span>
+          <ol class="steps">
+            <li><b>Shoot</b><span>Stills, around the clock, out a window facing the ridge.</span></li>
+            <li><b>Measure</b><span>Every frame indexed: light, colour, motion, where the sun is.</span></li>
+            <li><b>Rank</b><span>Each day scored against clip recipes. The best are kept.</span></li>
+            <li><b>Render</b><span>Steadied, smoothed and cut to 9:16 at full resolution.</span></li>
+          </ol>
+        </div>
+        <div class="lane" data-lane="pick">
+          <span class="lane-label">The pick</span>
+          <ol class="steps">
+            <li><b>Forecast</b><span>A blend of models gives a probability for every temperature bin.</span></li>
+            <li><b>Price</b><span>Each bin's probability is set against the market's ask, fees included.</span></li>
+            <li><b>Pick</b><span>The clearest edge, YES or NO, becomes the pick of the day.</span></li>
+          </ol>
+        </div>
+      </div>
+      <div class="merge" aria-hidden="true"><svg viewBox="0 0 40 200" preserveAspectRatio="none"><path d="M0 40 C 24 40, 16 100, 40 100 M0 160 C 24 160, 16 100, 40 100"/></svg></div>
+      <div class="lane" data-lane="video">
+        <span class="lane-label">The video</span>
+        <ol class="steps">
+          <li><b>Compose</b><span>The pick panel and the model-vs-market figure over the day's sky.</span></li>
+          <li><b>Post</b><span>YouTube and the other platforms, before the market settles.</span></li>
+          <li><b>Settle</b><span>The observed high or low decides it. Win or loss, it's logged.</span></li>
+          <li><b>Record</b><span>Every posted pick counts toward the record below.</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="record">
+  <div class="wrap">
+    <p class="kicker">The record</p>
+    <h2>Every posted pick, settled</h2>
+    <div class="notice" id="record-notice" hidden>
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg>
+      <span><b>Illustrative.</b> Every number here is a placeholder (XX.X), and the charts are drawn from made-up picks to show the layout. The real record replaces them once it's published.</span>
+    </div>
+
+    <div class="pick-card panel" id="latest" hidden>
+      <div class="pc-head">
+        <span class="pc-eyebrow">Pick of the day</span>
+        <span class="pc-ex" id="pc-ex"></span>
+      </div>
+      <h3 class="pc-title" id="pc-title"></h3>
+      <div class="pc-side"><span class="bubble" id="pc-side"></span><span class="pc-bin" id="pc-bin"></span></div>
+      <div class="pc-nums">
+        <div><span class="k">Our model</span><span class="v" id="pc-model"></span></div>
+        <div><span class="k">Price + fees</span><span class="v" id="pc-cost"></span></div>
+        <div><span class="k">Edge</span><span class="v edge" id="pc-edge"></span></div>
+      </div>
+      <p class="pc-line" id="pc-line"></p>
+    </div>
+
+    <div class="controls" role="group" aria-label="Filter the record">
+      <div class="seg" data-key="exchange" aria-label="Exchange">
+        <button type="button" data-v="all" aria-pressed="true">All</button>
+        <button type="button" data-v="kalshi" aria-pressed="false">Kalshi</button>
+        <button type="button" data-v="polymarket" aria-pressed="false">Polymarket</button>
+      </div>
+      <div class="seg" data-key="period" aria-label="Period">
+        <button type="button" data-v="30" aria-pressed="false">30D</button>
+        <button type="button" data-v="90" aria-pressed="false">90D</button>
+        <button type="button" data-v="ytd" aria-pressed="false">YTD</button>
+        <button type="button" data-v="all" aria-pressed="true">All</button>
+      </div>
+      <div class="seg" data-key="slip" aria-label="Tailing cost per contract" title="What a tailer pays on top: the same dollars at a worse price">
+        <span class="seg-label">Tailing</span>
+        <button type="button" data-v="0" aria-pressed="true">As placed</button>
+        <button type="button" data-v="3" aria-pressed="false">+3¢</button>
+        <button type="button" data-v="5" aria-pressed="false">+5¢</button>
+      </div>
+    </div>
+
+    <div class="tiles" id="tiles">
+      <div class="tile"><span class="label">Record</span><span class="value" id="t-record">—</span><span class="foot" id="t-record-foot"></span></div>
+      <div class="tile"><span class="label">Win rate</span><span class="value" id="t-wr">—</span><span class="foot" id="t-wr-foot"></span></div>
+      <div class="tile"><span class="label">Profit</span><span class="value" id="t-r">—</span><span class="foot" id="t-r-foot"></span></div>
+      <div class="tile"><span class="label">Avg. edge at entry</span><span class="value" id="t-edge">—</span><span class="foot">per contract, net of fees</span></div>
+    </div>
+
+    <div class="charts">
+      <figure class="chart panel wide">
+        <figcaption><b>Cumulative profit</b><span>in R, where 1 R is one pick's stake, fees included</span></figcaption>
+        <div class="plot" id="c-cum"></div>
+      </figure>
+      <figure class="chart panel wide">
+        <figcaption><b>Every pick</b><span>result in R, in the order posted</span>
+          <span class="legend"><i class="sw win"></i>Win <i class="sw loss"></i>Loss</span></figcaption>
+        <div class="plot" id="c-picks"></div>
+      </figure>
+      <figure class="chart panel" data-needs="city">
+        <figcaption><b>By city</b><span>net R and record</span></figcaption>
+        <div class="plot" id="c-city"></div>
+      </figure>
+      <figure class="chart panel" data-needs="model_prob">
+        <figcaption><b>Model vs. outcome</b><span>how often the side won, against what the model gave it</span>
+          <span class="legend"><i class="diag"></i>On the line: won as often as the model said</span></figcaption>
+        <div class="plot" id="c-cal"></div>
+      </figure>
+    </div>
+
+    <details class="table-view panel">
+      <summary>All picks as a table</summary>
+      <div class="table-scroll"><table id="t-all"><thead></thead><tbody></tbody></table></div>
+    </details>
+
+    <p class="fine">Results are counted from picks as posted, settled on the exchange's own resolution. Past results don't predict future ones. Nothing here is financial advice. <span id="t-updated"></span></p>
+  </div>
+</section>
+
+<section class="band" id="uploader">
+  <div class="wrap narrow">
+    <p class="kicker">About the uploader</p>
+    <h2>A small private app</h2>
+    <p>WX+EV uses a small private app to upload its own videos to its own YouTube channel. The app has no other users and does not access anyone else's account. See the <a href="privacy.html">privacy policy</a>.</p>
+    <p>Watch on YouTube: <a href="https://www.youtube.com/@WXplusEV" rel="noopener">@WXplusEV</a></p>
+    <p class="muted">Nothing here is financial advice.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-brand"><img src="avatar.png" alt="" width="40" height="40"><span>WX+EV</span></div>
+    <p class="muted">The sky behind this page is drawn live: the sun, moon, planets and stars where they are over San Francisco right now, and clouds from the latest observation at SFO (aviationweather.gov) and Open-Meteo's forecast. Star positions from the HYG database via d3-celestial.</p>
+    <nav><a href="privacy.html">Privacy policy</a><a href="socials.html">Socials</a><a href="#top">Back to top</a></nav>
+    <div class="social-row" id="social-row" aria-label="WX+EV on other platforms"></div>
+  </div>
+</footer>
+</body>
+</html>
